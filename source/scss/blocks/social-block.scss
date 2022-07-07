@@ -59,6 +59,13 @@
     border: 2px solid $c-light;
     z-index: -1;
     transition: all 0.2s linear;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  body.loaded & {
+    &::before {
+      transform: translate(-50%, -50%) scale(1);
+    }
   }
 
   svg {
