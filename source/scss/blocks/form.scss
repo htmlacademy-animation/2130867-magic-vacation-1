@@ -33,7 +33,7 @@
   flex: none;
   margin-right: 3rem;
   padding: 0 5.6rem;
-  height: 6rem;  
+  height: 6rem;
   width: 0;
   text-transform: uppercase;
   font: inherit;
@@ -75,7 +75,6 @@
 }
 
 .form__button {
-
   @media (orientation: portrait) {
     position: relative;
     flex: none;
@@ -122,7 +121,21 @@
 
 .form--result {
   .form__field {
-    width: calc(100% - 31rem);
+    width: 0;
+    animation-name: showInputField;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1s;
+
+    &::placeholder {
+      opacity: 0;
+      transition: opacity 0.5s ease 1.2s;
+
+      .screen--show & {
+        opacity: 1;
+      }
+    }
 
     @media (min-width: $stop-scaling) {
       width: calc(100% - 310px);
