@@ -34,14 +34,14 @@
   display: block;
   padding: 1rem 0;
   width: 10rem;
-  color: $c-light;  
+  color: $c-light;
   opacity: 0;
   transform: translateX(-30%);
-  transition: 0.6s cubic-bezier(0,.6,.2,1);
+  transition: 0.6s cubic-bezier(0, 0.6, 0.2, 1);
 
   .loaded & {
     opacity: 1;
-    transform: translateX(0%)
+    transform: translateX(0%);
   }
 
   @media (min-width: $stop-scaling) {
@@ -292,12 +292,36 @@
       color: $c-purple;
       outline: none;
 
+      body.light-purple & {
+        color: $c-dark;
+      }
+
+      body.light-blue & {
+        color: $light-blue;
+      }
+
+      body.dark-blue & {
+        color: $dark-blue;
+      }
+
       &::after {
         opacity: 1;
-        background-color: $c-purple;        
+        background-color: $c-purple;
         width: 100%;
         right: auto;
         left: 0;
+      }
+
+      body.light-purple & {
+        background-color: $c-dark;
+      }
+
+      body.light-blue & {
+        background-color: $light-blue;
+      }
+
+      body.dark-blue & {
+        background-color: $dark-blue;
       }
     }
   }
